@@ -1,0 +1,1102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carla Melo · Assessoria e Consultoria Tributária</title>
+<meta name="description" content="Terceirização fiscal, auditoria, consultoria, recuperação de impostos e benefícios fiscais para postos de combustível, conveniências, minimercados, farmácias e indústrias.">
+<meta name="theme-color" content="#5A0D45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sites-incriveis.css">
+<script src="sites-incriveis.js" defer></script>
+<style>
+  :root {
+    --vinho: #5A0D45;
+    --vinho-escuro: #420833;
+    --dourado: #E5B752;
+    --champanhe: #F5D76A;
+    --grafite: #191C20;
+    --off: #F7F4F1;
+    --tinta: #242124;
+    --tinta-suave: #6A5664;      /* cinza puxado pro vinho */
+    --clara-suave: #D9C6D2;      /* texto secundário sobre vinho/grafite */
+    --papel: #FBF8F5;
+    --linha-clara: rgba(90, 13, 69, 0.16);
+    --linha-ouro: rgba(229, 183, 82, 0.32);
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Manrope", system-ui, sans-serif;
+
+    /* escala tipográfica: 15 / 18 / 24 / 36 / 56 / 88 (títulos também respeitam a altura da tela) */
+    --t-1: 15px; --t-2: 18px; --t-3: 24px; --t-4: 36px; --t-5: 56px; --t-6: 88px;
+    /* espaço: 8 / 16 / 24 / 40 / 64 / 104 / 168 */
+    --e-1: 8px; --e-2: 16px; --e-3: 24px; --e-4: 40px; --e-5: 64px; --e-6: 104px; --e-7: 168px;
+    --gutter: clamp(16px, 5vw, 64px);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--vinho);
+    color: var(--off);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  /* textura de papel, quase imperceptível */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+  p { margin: 0; }
+  .rotulo {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .so-leitor { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .moldura { width: min(1240px, 100%); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* cada cena tem cor própria (fallback e movimento-reduzido);
+     com o motor ativo, o fundo da página viaja e as cenas ficam transparentes */
+  .cena-abertura, .cena-chamada { background: var(--vinho); color: var(--off); }
+  .cena-carla, .cena-servicos  { background: var(--off); color: var(--tinta); }
+  .cena-ramos                  { background: var(--vinho-escuro); color: var(--off); }
+  .cena-pico                   { background: var(--grafite); color: var(--off); }
+  .fx-fundo-ativo:not(.fx-reduzido) [data-fx-fundo] { background: transparent; color: inherit; }
+
+  /* ---------- 1. Abertura ---------- */
+  .cena-abertura {
+    position: relative;
+    height: 100vh;
+    height: 100svh;
+    min-height: 560px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow: hidden;
+  }
+  .cena-abertura::before {           /* moldura dourada fina */
+    content: "";
+    position: absolute;
+    inset: clamp(10px, 1.6vw, 22px);
+    border: 1px solid var(--linha-ouro);
+    pointer-events: none;
+    z-index: 3;
+  }
+  .topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--e-3);
+    padding-top: clamp(20px, 3.4vh, 36px);
+    position: relative;
+    z-index: 2;
+  }
+  .logo {
+    width: clamp(200px, 22vw, 300px);
+    aspect-ratio: 1170 / 300;
+    overflow: hidden;
+    margin-left: -10px;
+  }
+  .logo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .topo a.contato-topo {
+    color: var(--clara-suave);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(229, 183, 82, 0.5);
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+  .topo a.contato-topo:hover { color: var(--dourado); }
+
+  .abertura-corpo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--e-3);
+    padding-bottom: var(--e-3);
+    position: relative;
+    z-index: 2;
+  }
+  .abertura-corpo .rotulo { color: var(--dourado); margin-bottom: clamp(12px, 2.6vh, 24px); }
+  .abertura h1 {
+    font-size: clamp(42px, min(7vw, 10.5vh), 116px);
+    max-width: 7.6em;
+    line-height: 0.98;
+  }
+  .abertura-linha {
+    width: 96px; height: 1px;
+    background: var(--dourado);
+    margin: clamp(20px, 4vh, 40px) 0 clamp(14px, 2.6vh, 24px);
+    transform-origin: left;
+    animation: linha-entra 1.4s 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .abertura-lead {
+    max-width: 50ch;
+    font-size: clamp(16px, 2.1vh, var(--t-2));
+    color: inherit;      /* acompanha a tinta quando o fundo viaja */
+    opacity: 0.82;
+  }
+  @keyframes linha-entra { from { transform: scaleX(0); } }
+
+  /* arco do "C": desenha-se ao carregar, cortado pela borda da tela */
+  .arco-casca {
+    position: absolute;
+    right: -16vw;
+    bottom: -36vh;
+    width: min(96vh, 74vw);
+    aspect-ratio: 1;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .arco { width: 100%; height: 100%; }
+  .arco circle {
+    fill: none;
+    stroke: var(--dourado);
+    stroke-width: 0.6;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 0;
+    animation: arco-desenha 2.6s 0.3s cubic-bezier(0.65, 0, 0.35, 1) both;
+    opacity: 0.55;
+  }
+  .arco circle + circle { stroke-width: 0.3; opacity: 0.3; animation-delay: 0.7s; }
+  @keyframes arco-desenha { from { stroke-dashoffset: 600; } }
+
+  /* faixa de termos fiscais: desliza de lado com a rolagem */
+  .faixa {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--linha-ouro);
+    margin: 0 clamp(10px, 1.6vw, 22px) clamp(10px, 1.6vw, 22px);
+    overflow: hidden;
+    padding: clamp(10px, 1.8vh, 18px) 0;
+    white-space: nowrap;
+    background: var(--vinho);   /* o arco passa por trás da faixa */
+  }
+  .faixa-trilha { display: inline-flex; will-change: transform; }
+  .faixa span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(20px, 3vh, 28px);
+    color: var(--dourado);
+    padding: 0 0.9em;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.8em;
+  }
+  .faixa span::after { content: ""; width: 5px; height: 5px; background: var(--dourado); opacity: 0.6; transform: rotate(45deg); }
+
+  /* ---------- 2. Quem é a Carla ---------- */
+  .cena-carla {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: var(--e-5) 0;
+  }
+  .carla-grade {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: var(--e-5);
+    align-items: center;
+  }
+  .monograma {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(180px, min(28vw, 50vh), 420px);
+    line-height: 0.8;
+    color: var(--vinho);
+    opacity: 0.09;
+    letter-spacing: -0.08em;
+    user-select: none;
+  }
+  .carla-texto > span.rotulo { color: var(--vinho); margin-bottom: var(--e-3); display: block; }
+  .carla-texto h2 { font-size: clamp(34px, min(4.2vw, 7vh), var(--t-5)); max-width: 15ch; margin-bottom: clamp(20px, 4vh, 40px); }
+  .carla-texto p { max-width: 58ch; margin-bottom: var(--e-2); color: var(--tinta-suave); }
+  .carla-texto p strong { color: var(--tinta); font-weight: 600; }
+  .ramos-lista {
+    list-style: none;
+    padding: var(--e-3) 0 0;
+    margin: var(--e-3) 0 0;
+    border-top: 1px solid var(--linha-clara);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-1) var(--e-3);
+    color: var(--vinho);
+  }
+  .ramos-lista li { display: flex; align-items: center; gap: var(--e-3); }
+  .ramos-lista li + li::before { content: ""; width: 4px; height: 4px; background: var(--dourado); transform: rotate(45deg); }
+
+  /* ---------- 3. Cada ramo, seu imposto (trilho) ---------- */
+  .cena-ramos .fx-palco {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(24px, 5vh, 56px);
+  }
+  .ramos-cabeca {
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--e-5);
+    align-items: end;
+  }
+  .ramos-cabeca .rotulo { color: var(--dourado); display: block; margin-bottom: var(--e-2); }
+  .ramos-cabeca h2 { font-size: clamp(36px, min(4.8vw, 8vh), 72px); max-width: 13ch; }
+  .ramos-cabeca p { color: var(--clara-suave); max-width: 40ch; }
+  .ramos-trilho-casca { overflow: hidden; }
+  .cena-ramos [data-fx="trilho"] {
+    gap: var(--e-3);
+    padding: 0 var(--gutter);
+    padding-left: max(var(--gutter), calc((100vw - 1240px) / 2 + var(--gutter)));
+  }
+  .cena-ramos [data-fx="trilho"]::after { content: ""; flex: 0 0 1px; } /* respiro no fim do trilho */
+  .ramo {
+    flex: 0 0 clamp(270px, 26vw, 360px);
+    min-height: clamp(300px, 46vh, 420px);
+    border: 1px solid var(--linha-ouro);
+    padding: clamp(20px, 3.2vh, 32px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: rgba(90, 13, 69, 0.35);
+  }
+  .ramo-inicial {
+    font-family: var(--serif);
+    font-size: clamp(72px, 13vh, 120px);
+    line-height: 0.8;
+    color: var(--dourado);
+    margin-bottom: auto;
+  }
+  .ramo h3 { font-size: clamp(26px, 3.6vh, 32px); margin: var(--e-3) 0 var(--e-2); }
+  .ramo p { color: var(--clara-suave); font-size: 15px; line-height: 1.6; }
+  .ramo-fim {
+    flex: 0 0 clamp(270px, 26vw, 360px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--e-4);
+  }
+  .ramo-fim p { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 4vh, 36px); line-height: 1.2; color: var(--off); }
+
+  /* ---------- 4. Serviços ---------- */
+  .cena-servicos {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: var(--e-5) 0;
+  }
+  .servicos-cabeca {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--e-5);
+    align-items: end;
+    margin-bottom: clamp(24px, 5vh, 56px);
+  }
+  .servicos-cabeca h2 { font-size: clamp(38px, min(5.2vw, 9vh), 80px); }
+  .servicos-cabeca p { color: var(--tinta-suave); max-width: 42ch; }
+  .servicos {
+    list-style: none; margin: 0; padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--e-5);
+  }
+  .servico {
+    padding: clamp(18px, 3.4vh, 32px) 0;
+    border-top: 1px solid var(--linha-clara);
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    column-gap: var(--e-2);
+  }
+  .servico::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--dourado);
+    margin-top: 0.85em;
+  }
+  .servico h3 { font-size: clamp(24px, 3.6vh, 32px); color: var(--vinho); margin-bottom: var(--e-1); grid-column: 2; }
+  .servico p { color: var(--tinta-suave); max-width: 48ch; grid-column: 2; font-size: 16px; }
+
+  /* ---------- 5. Pico: a nota que se concilia ---------- */
+  .cena-pico .fx-palco {
+    background: var(--grafite);   /* sai da tela inteira, sem desbotar quando o fundo da página clareia */
+    color: var(--off);
+    display: grid;
+    grid-template-columns: 4fr 7fr;
+    gap: var(--e-5);
+    align-items: center;
+    width: 100%;
+    padding: var(--e-4) max(var(--gutter), calc((100% - 1240px) / 2 + var(--gutter)));
+  }
+  .pico-texto .rotulo { color: var(--dourado); display: block; margin-bottom: var(--e-3); }
+  .pico-texto h2 { font-size: clamp(36px, min(4.6vw, 8vh), 64px); margin-bottom: clamp(20px, 4vh, 40px); max-width: 12ch; }
+  .fases { display: grid; }
+  .fase {
+    grid-area: 1 / 1;
+    color: var(--clara-suave);
+    max-width: 36ch;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .fase b { color: var(--off); font-weight: 600; display: block; margin-bottom: var(--e-1); }
+  .fase.ativa { opacity: 1; transform: none; }
+
+  .mesa-area { display: flex; flex-direction: column; gap: var(--e-4); }
+  .mesa {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--e-2);
+  }
+  .doc {
+    position: relative;
+    background: var(--papel);
+    color: var(--tinta);
+    border-radius: 3px;
+    padding: var(--e-2);
+    min-height: clamp(120px, 17vh, 150px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 12px 28px rgba(0,0,0,0.35);
+    will-change: transform;
+  }
+  .doc-tipo { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vinho); }
+  .doc-nome { font-family: var(--serif); font-size: 21px; font-weight: 600; line-height: 1.1; }
+  .doc-linhas { display: grid; gap: 6px; margin-top: auto; }
+  .doc-linhas i { height: 4px; background: #E4DCD8; border-radius: 2px; }
+  .doc-linhas i:nth-child(2) { width: 78%; }
+  .doc-linhas i:nth-child(3) { width: 54%; }
+  .doc-selo {
+    position: absolute;
+    top: 12px; right: 12px;
+    display: flex; align-items: center; gap: 4px;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--vinho);
+    background: var(--dourado);
+    padding: 3px 8px 3px 6px;
+    border-radius: 99px;
+    opacity: 0;
+    transform: scale(1.8);
+  }
+  .doc-selo svg { width: 11px; height: 11px; }
+
+  .carimbo {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: 168px; height: 168px;
+    margin: -84px 0 0 -84px;
+    border-radius: 50%;
+    border: 1.5px solid var(--dourado);
+    box-shadow: inset 0 0 0 6px var(--grafite), inset 0 0 0 7px rgba(229,183,82,0.6);
+    background: rgba(25, 28, 32, 0.92);
+    color: var(--dourado);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    opacity: 0;
+    transform: scale(1.5) rotate(-20deg);
+    pointer-events: none;
+    z-index: 30;
+  }
+  .carimbo span:first-child { font-family: var(--serif); font-size: 64px; line-height: 0.9; letter-spacing: -0.06em; }
+  .carimbo span:last-child { font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 6px; }
+
+  .excesso { display: grid; gap: var(--e-1); }
+  .excesso-topo { display: flex; justify-content: space-between; gap: var(--e-2); font-size: 13px; }
+  .excesso-topo span:first-child { color: var(--off); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; }
+  .excesso-topo span:last-child { color: var(--clara-suave); font-style: italic; font-family: var(--serif); font-size: 16px; }
+  .excesso-trilho { height: 6px; background: rgba(247, 244, 241, 0.1); border-radius: 3px; overflow: hidden; }
+  .excesso-barra { height: 100%; background: var(--dourado); transform-origin: left; will-change: transform; }
+
+  /* ---------- 6. Reforma tributária ---------- */
+  .cena-reforma { background: var(--off); color: var(--tinta); }
+  .cena-reforma {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: var(--e-5) 0;
+  }
+  .reforma-cabeca {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: var(--e-5);
+    align-items: end;
+    margin-bottom: clamp(32px, 7vh, 72px);
+  }
+  .reforma-cabeca .rotulo { color: var(--vinho); display: block; margin-bottom: var(--e-2); }
+  .reforma-cabeca h2 { font-size: clamp(36px, min(4.8vw, 8vh), 72px); max-width: 16ch; }
+  .reforma-cabeca p { color: var(--tinta-suave); max-width: 44ch; }
+  .linha-tempo {
+    list-style: none; margin: 0; padding: 0;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--e-4);
+  }
+  .linha-tempo::before,
+  .linha-tempo-ouro {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 7px;
+    height: 1px;
+    background: var(--linha-clara);
+  }
+  .linha-tempo-ouro { background: var(--dourado); height: 2px; top: 6px; transform-origin: left; transform: scaleX(0); will-change: transform; }
+  .marco { position: relative; padding-top: var(--e-4); opacity: 0.35; transition: opacity 0.5s ease; }
+  .marco::before {
+    content: "";
+    position: absolute; top: 0; left: 0;
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--vinho);
+    background: var(--off);
+    transition: background 0.4s ease, border-color 0.4s ease;
+  }
+  .marco.ativo { opacity: 1; }
+  .marco.ativo::before { background: var(--dourado); border-color: var(--dourado); }
+  .marco-ano { font-family: var(--serif); font-size: clamp(32px, 5.4vh, 48px); line-height: 1; color: var(--vinho); display: block; margin-bottom: var(--e-2); font-variant-numeric: lining-nums; }
+  .marco h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; letter-spacing: 0.02em; margin-bottom: var(--e-1); }
+  .marco p { color: var(--tinta-suave); font-size: 15px; line-height: 1.6; }
+  .reforma-pe {
+    margin-top: clamp(32px, 7vh, 72px);
+    padding-top: var(--e-4);
+    border-top: 1px solid var(--linha-clara);
+    display: flex; align-items: center; justify-content: space-between; gap: var(--e-4); flex-wrap: wrap;
+  }
+  .reforma-pe p { font-family: var(--serif); font-style: italic; font-size: clamp(22px, 3.2vh, 28px); line-height: 1.25; color: var(--vinho); max-width: 30ch; }
+  .botao-contorno {
+    display: inline-flex; align-items: center; gap: 12px;
+    border: 1px solid var(--vinho);
+    color: var(--vinho);
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 30px;
+    border-radius: 2px;
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+  .botao-contorno:hover { background: var(--vinho); color: var(--off); }
+  .botao-contorno span { transition: transform 0.25s ease; }
+  .botao-contorno:hover span { transform: translateX(4px); }
+  .fx-reduzido .marco { opacity: 1; }
+  .fx-reduzido .marco::before { background: var(--dourado); border-color: var(--dourado); }
+  .fx-reduzido .linha-tempo-ouro { transform: none; }
+
+  /* ---------- 7. Chamada ---------- */
+  .cena-chamada {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    padding: var(--e-6) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .chamada-grade {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(40px, 7vw, 104px);
+    align-items: center;
+  }
+  .chamada-selo {
+    width: 64px; height: 64px; margin-bottom: var(--e-4);
+    border: 1px solid var(--dourado); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 26px; color: var(--dourado); letter-spacing: -0.06em;
+  }
+  .cena-chamada h2 { font-size: clamp(40px, min(5.4vw, 9vh), 80px); max-width: 13ch; margin-bottom: var(--e-4); }
+  .chamada-texto > p { max-width: 44ch; margin-bottom: var(--e-5); color: var(--clara-suave); font-size: var(--t-2); }
+
+  /* cartões de contato */
+  .contatos { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-2); }
+  .contatos .rotulo { color: var(--dourado); margin-bottom: var(--e-1); }
+  .cartao {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    gap: var(--e-3);
+    align-items: center;
+    padding: var(--e-3);
+    border: 1px solid var(--linha-ouro);
+    background: rgba(66, 8, 51, 0.45);
+    text-decoration: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  .cartao:hover { background: var(--vinho-escuro); border-color: var(--dourado); }
+  .cartao-icone {
+    width: 52px; height: 52px; border-radius: 50%;
+    border: 1px solid var(--linha-ouro);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--dourado);
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .cartao:hover .cartao-icone { background: var(--dourado); color: var(--vinho-escuro); }
+  .cartao-icone svg { width: 22px; height: 22px; }
+  .cartao-texto { min-width: 0; }
+  .cartao-tipo { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--clara-suave); margin-bottom: 2px; }
+  .cartao-valor { display: block; font-size: 16px; color: var(--off); overflow-wrap: break-word; }
+  .cartao-seta { color: var(--dourado); font-size: 20px; transition: transform 0.3s ease; }
+  .cartao:hover .cartao-seta { transform: translate(3px, -3px); }
+
+  /* rodapé: navegação + assinatura gigante */
+  .rodape-final { background: var(--vinho-escuro); color: var(--off); position: relative; z-index: 1; overflow: hidden; }
+  .rodape-grade {
+    display: grid;
+    grid-template-columns: 5fr 3fr 4fr;
+    gap: var(--e-5);
+    padding-top: var(--e-6);
+    padding-bottom: var(--e-5);
+  }
+  .rodape-final h3 { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dourado); margin-bottom: var(--e-3); }
+  .rodape-final ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--e-1); }
+  .rodape-final ul a { text-decoration: none; color: var(--clara-suave); font-size: 15px; }
+  .rodape-final ul a:hover { color: var(--dourado); }
+  .rodape-nome { display: flex; align-items: center; gap: var(--e-2); margin-bottom: var(--e-3); }
+  .rodape-nome .chamada-selo { width: 52px; height: 52px; font-size: 21px; margin: 0; flex: none; }
+  .rodape-nome strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.1; color: var(--off); letter-spacing: 0.04em; }
+  .rodape-nome span span { display: block; font-size: 13px; color: var(--dourado); }
+  .rodape-marca p { color: var(--clara-suave); font-size: 15px; max-width: 38ch; }
+  .assinatura {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(72px, 17.5vw, 300px);
+    line-height: 0.78;
+    letter-spacing: -0.03em;
+    color: var(--dourado);
+    white-space: nowrap;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0.1em;
+    user-select: none;
+  }
+  .rodape-base {
+    border-top: 1px solid var(--linha-ouro);
+    padding-top: var(--e-3);
+    padding-bottom: var(--e-3);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--e-2);
+    font-size: 13px; color: var(--clara-suave);
+  }
+  .rodape-base a { text-decoration: none; color: var(--clara-suave); }
+  .rodape-base a:hover { color: var(--dourado); }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  .botao {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--dourado);
+    color: var(--vinho-escuro);
+    font-weight: 600;
+    font-size: var(--t-2);
+    text-decoration: none;
+    padding: 20px 36px;
+    border-radius: 2px;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .botao:hover { background: var(--champanhe); transform: translateY(-2px); }
+  .botao:focus-visible, a:focus-visible { outline: 2px solid var(--champanhe); outline-offset: 4px; }
+  .botao svg { width: 20px; height: 20px; }
+
+  /* ---------- celular ---------- */
+  @media (max-width: 820px) {
+    body { font-size: 16px; }
+    .topo a.contato-topo { display: none; }
+    .abertura h1 { font-size: clamp(40px, 11.5vw, 60px); }
+    .arco-casca { right: -55vw; bottom: -14vh; width: 120vw; }
+    .carla-grade, .servicos-cabeca, .ramos-cabeca { grid-template-columns: 1fr; gap: var(--e-3); }
+    .monograma { font-size: 150px; margin-bottom: -30px; }
+    .carla-texto h2 { font-size: 34px; }
+    .ramos-cabeca h2 { font-size: 34px; }
+    .ramos-cabeca p { font-size: 15px; }
+    .ramo, .ramo-fim { flex-basis: 78vw; min-height: 0; }
+    .ramo-inicial { font-size: 64px; }
+    .servicos { grid-template-columns: 1fr; }
+    .servico { grid-template-columns: 1fr; padding: var(--e-3) 0; }
+    .servico::before { display: none; }
+    .servico h3, .servico p { grid-column: 1; }
+
+    .cena-pico .fx-palco { grid-template-columns: 1fr; gap: var(--e-3); align-content: center; padding-top: var(--e-3); padding-bottom: var(--e-3); }
+    .pico-texto h2 { font-size: 34px; margin-bottom: var(--e-2); }
+    .fase { font-size: 15px; line-height: 1.5; }
+    .mesa { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .doc { min-height: 92px; padding: 10px; }
+    .doc-nome { font-size: 16px; }
+    .doc-linhas { display: none; }
+    .doc-selo { top: auto; bottom: 8px; right: 8px; }
+    .carimbo { width: 128px; height: 128px; margin: -64px 0 0 -64px; }
+    .carimbo span:first-child { font-size: 48px; }
+    .mesa-area { gap: var(--e-3); }
+    .botao { padding: 18px 24px; font-size: 16px; }
+    .reforma-cabeca { grid-template-columns: 1fr; gap: var(--e-3); }
+    .reforma-cabeca h2 { font-size: 34px; }
+    .linha-tempo { grid-template-columns: 1fr; gap: var(--e-4); padding-left: var(--e-4); }
+    .linha-tempo::before, .linha-tempo-ouro { left: 7px; right: auto; top: 0; bottom: 0; width: 1px; height: auto; }
+    .linha-tempo-ouro { width: 2px; left: 6px; transform-origin: top; transform: scaleY(0); }
+    .fx-reduzido .linha-tempo-ouro { transform: none; }
+    .marco { padding-top: 0; }
+    .marco::before { left: calc(-1 * var(--e-4)); top: 4px; }
+    .marco-ano { font-size: 32px; margin-bottom: var(--e-1); }
+    .botao-contorno { width: 100%; justify-content: center; }
+    .chamada-grade { grid-template-columns: 1fr; }
+    .cena-chamada { padding: var(--e-6) 0 var(--e-5); }
+    .cena-chamada h2 { font-size: 40px; }
+    .botao { width: 100%; justify-content: center; }
+    .cartao { grid-template-columns: 44px 1fr auto; gap: var(--e-2); padding: var(--e-2); }
+    .cartao-icone { width: 44px; height: 44px; }
+    .cartao-valor { font-size: 15px; }
+    .rodape-grade { grid-template-columns: 1fr; gap: var(--e-4); padding-top: var(--e-5); }
+    .assinatura { font-size: 19vw; }
+    .rodape-base { justify-content: center; text-align: center; }
+  }
+
+  /* movimento-reduzido: estado final, tudo legível */
+  @media (prefers-reduced-motion: reduce) {
+    .arco circle, .abertura-linha { animation: none; }
+  }
+  .fx-reduzido .cena-ramos .fx-palco { padding: var(--e-6) 0; }
+  .fx-reduzido .cena-ramos [data-fx="trilho"] { row-gap: var(--e-3); }
+  .fx-reduzido .cena-pico .fx-palco { padding-top: var(--e-6); padding-bottom: var(--e-6); }
+  .fx-reduzido .fase { grid-area: auto; opacity: 1; transform: none; margin-bottom: var(--e-3); }
+  .fx-reduzido .doc-selo { opacity: 1; transform: none; }
+  .fx-reduzido .carimbo { opacity: 1; transform: rotate(-8deg); }
+  .fx-reduzido .excesso-barra { transform: scaleX(0.18); }
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- 1. Reconhecimento -->
+  <section class="cena-abertura abertura" id="topo" data-fx-fundo="#5A0D45" data-fx-tinta="#F7F4F1">
+    <div class="moldura topo">
+      <div class="logo"><img src="img/logo_carla-melo.jpg" alt="Carla Melo — Assessoria e Consultoria Tributária" width="1170" height="1170"></div>
+      <a class="contato-topo rotulo" href="https://wa.me/5579981600853">Fale com a Carla</a>
+    </div>
+
+    <div class="moldura abertura-corpo">
+      <span class="rotulo">Assessoria e Consultoria Tributária</span>
+      <h1 data-fx="palavras" data-fx-duracao="900">Sua empresa pode estar pagando imposto a mais.</h1>
+      <div class="abertura-linha" aria-hidden="true"></div>
+      <p class="abertura-lead">Para postos de combustível, conveniências, minimercados e toda empresa que quer pagar o imposto justo, com a rotina fiscal em ordem.</p>
+    </div>
+
+    <div class="faixa" aria-hidden="true">
+      <div class="faixa-trilha">
+        <span>ICMS</span><span>PIS/COFINS</span><span>SPED Fiscal</span><span>NCM</span><span>Substituição tributária</span><span>LMC</span><span>Tributação monofásica</span><span>Créditos</span><span>Benefícios fiscais</span><span>Obrigações acessórias</span>
+      </div>
+    </div>
+
+    <div class="arco-casca" data-fx-mouse="16" aria-hidden="true">
+      <svg class="arco" viewBox="0 0 200 200">
+        <circle cx="100" cy="100" r="95" pathLength="600"/>
+        <circle cx="100" cy="100" r="82" pathLength="600"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 2. Quem é a Carla -->
+  <section class="cena-carla" data-fx-fundo="#F7F4F1" data-fx-tinta="#242124">
+    <div class="moldura carla-grade">
+      <div class="monograma" aria-hidden="true" data-fx-paralaxe="0.18">CM</div>
+      <div class="carla-texto">
+        <span class="rotulo">Carla Melo · Contadora</span>
+        <h2>Quem entende o seu negócio, entende o seu imposto.</h2>
+        <p>Carla Melo é contadora e consultora tributária. Sua bagagem está na rotina de <strong>postos de combustível, lojas de conveniência e minimercados</strong>: negócios de margem apertada, muitas notas por dia e produtos com regras fiscais próprias.</p>
+        <p>Também atende farmácias, indústrias e empresas de outros ramos, com o mesmo cuidado: cada cadastro conferido, cada crédito aproveitado, cada obrigação entregue no prazo.</p>
+        <ul class="ramos-lista rotulo" aria-label="Ramos atendidos">
+          <li>Postos de combustível</li>
+          <li>Conveniências</li>
+          <li>Minimercados</li>
+          <li>Farmácias</li>
+          <li>Indústrias</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Cada ramo tem o seu próprio imposto -->
+  <section class="cena-ramos" id="especialidade" data-fx-fixa data-fx-altura="4" data-fx-fundo="#420833" data-fx-tinta="#F7F4F1">
+    <div class="fx-palco">
+      <div class="ramos-cabeca">
+        <div>
+          <span class="rotulo">Especialidade</span>
+          <h2>Cada ramo tem o seu próprio imposto.</h2>
+        </div>
+        <p>Regra que serve para um negócio custa caro em outro. Por isso o trabalho começa entendendo o que você vende.</p>
+      </div>
+      <div class="ramos-trilho-casca">
+        <div data-fx="trilho">
+          <article class="ramo">
+            <span class="ramo-inicial" aria-hidden="true">P</span>
+            <h3>Postos de combustível</h3>
+            <p>Combustível com tributação monofásica, LMC em dia e ICMS recolhido na origem. Cadastro errado aqui vira imposto pago em duplicidade.</p>
+          </article>
+          <article class="ramo">
+            <span class="ramo-inicial" aria-hidden="true">C</span>
+            <h3>Conveniências</h3>
+            <p>Bebidas, cigarros, alimentos: cada família de produto com regras próprias de substituição tributária e de PIS/COFINS.</p>
+          </article>
+          <article class="ramo">
+            <span class="ramo-inicial" aria-hidden="true">M</span>
+            <h3>Minimercados</h3>
+            <p>Milhares de itens cadastrados. Um NCM errado muda a tributação, e o erro se repete em cada venda.</p>
+          </article>
+          <article class="ramo">
+            <span class="ramo-inicial" aria-hidden="true">F</span>
+            <h3>Farmácias</h3>
+            <p>Medicamentos com PIS/COFINS monofásico e listas positiva, negativa e neutra. Classificar certo é deixar de pagar a mais.</p>
+          </article>
+          <article class="ramo">
+            <span class="ramo-inicial" aria-hidden="true">I</span>
+            <h3>Indústrias</h3>
+            <p>Créditos de ICMS e IPI, benefícios fiscais e obrigações complexas. Cada etapa da produção pede um tratamento.</p>
+          </article>
+          <div class="ramo-fim">
+            <p>Seu ramo não está aqui? O método é o mesmo: conferir, alinhar, aproveitar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. O que ela resolve -->
+  <section class="cena-servicos" id="servicos" data-fx-fundo="#F7F4F1" data-fx-tinta="#242124">
+    <div class="moldura">
+      <div class="servicos-cabeca">
+        <h2 data-fx="subir">O que a Carla resolve</h2>
+        <p data-fx="surgir" data-fx-atraso="200">Do diagnóstico à rotina do dia a dia. Você escolhe o que precisa, ou entrega o fiscal inteiro para quem domina o assunto.</p>
+      </div>
+      <ul class="servicos">
+        <li class="servico" data-fx="esquerda">
+          <h3>Terceirização fiscal</h3>
+          <p>A rotina fiscal da sua empresa feita por especialista: escrituração, apurações e obrigações acessórias em dia, sem precisar manter um setor interno.</p>
+        </li>
+        <li class="servico" data-fx="direita" data-fx-atraso="120">
+          <h3>Auditoria fiscal</h3>
+          <p>Produto com NCM errado, crédito não aproveitado, substituição tributária mal calculada. A revisão encontra antes da fiscalização.</p>
+        </li>
+        <li class="servico" data-fx="esquerda">
+          <h3>Consultoria tributária</h3>
+          <p>Orientação para decidir com segurança: regime, enquadramento e o tratamento correto de cada produto, inclusive combustíveis e itens monofásicos.</p>
+        </li>
+        <li class="servico" data-fx="direita" data-fx-atraso="120">
+          <h3>Recuperação de impostos</h3>
+          <p>Identificação de tributos pagos indevidamente ou a maior, e dos caminhos legais para recuperá-los.</p>
+        </li>
+        <li class="servico" data-fx="esquerda">
+          <h3>Assessoria e benefícios fiscais</h3>
+          <p>Acompanhamento contínuo e análise dos benefícios fiscais que se aplicam ao seu ramo e à sua operação.</p>
+        </li>
+        <li class="servico" data-fx="direita" data-fx-atraso="120">
+          <h3>Cursos e treinamentos</h3>
+          <p>Capacitação para a sua equipe entender a rotina fiscal e mantê-la organizada no dia a dia.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. PICO — a nota que se concilia -->
+  <section class="cena-pico" id="pico" data-fx-fixa data-fx-altura="5" data-fx-fundo="#191C20" data-fx-tinta="#F7F4F1">
+    <div class="fx-palco">
+      <div class="pico-texto">
+        <span class="rotulo">Como funciona</span>
+        <h2 data-fx="palavras" data-fx-duracao="800">Da desordem à conformidade.</h2>
+        <div class="fases">
+          <p class="fase ativa"><b>Hoje</b>Notas de entrada sem conferência, produtos com NCM errado, guias calculadas sem revisão. O imposto a mais passa despercebido.</p>
+          <p class="fase"><b>Com a Carla</b>Cada documento é conferido, cada cadastro é alinhado, cada crédito é aproveitado. Um por um.</p>
+          <p class="fase"><b>O resultado</b>Rotina organizada, imposto no valor justo e você seguro diante do fisco.</p>
+        </div>
+      </div>
+
+      <div class="mesa-area">
+        <p class="so-leitor">Ilustração: documentos fiscais desorganizados se alinham, são conferidos um a um e recebem o selo CM, enquanto o imposto pago a mais diminui.</p>
+        <div class="mesa" aria-hidden="true">
+          <div class="doc"><span class="doc-tipo">NF-e</span><span class="doc-nome">Nota de compra</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="doc"><span class="doc-tipo">NCM</span><span class="doc-nome">Cadastro de produtos</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="doc"><span class="doc-tipo">ICMS</span><span class="doc-nome">Guia de recolhimento</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="doc"><span class="doc-tipo">PIS/COFINS</span><span class="doc-nome">Apuração mensal</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="doc"><span class="doc-tipo">SPED</span><span class="doc-nome">Escrituração fiscal</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="doc"><span class="doc-tipo">LMC</span><span class="doc-nome">Livro de combustíveis</span><span class="doc-linhas"><i></i><i></i><i></i></span><span class="doc-selo"><svg viewBox="0 0 12 12"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Conferido</span></div>
+          <div class="carimbo"><span>CM</span><span>Conferido</span></div>
+        </div>
+        <div class="excesso" aria-hidden="true">
+          <div class="excesso-topo"><span>Imposto pago a mais</span><span>ilustração</span></div>
+          <div class="excesso-trilho"><div class="excesso-barra"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Reforma tributária -->
+  <section class="cena-reforma" id="reforma" data-fx-fundo="#F7F4F1" data-fx-tinta="#242124">
+    <div class="moldura">
+      <div class="reforma-cabeca">
+        <div>
+          <span class="rotulo">Reforma tributária</span>
+          <h2>A maior mudança nos impostos do país já começou.</h2>
+        </div>
+        <p>ICMS, ISS, PIS e COFINS vão dar lugar ao IBS e à CBS. Até lá, sua empresa convive com os dois sistemas, e cadastros, preços e créditos precisam ser revistos. Combustíveis, inclusive, têm regras próprias na reforma.</p>
+      </div>
+      <ol class="linha-tempo">
+        <li class="linha-tempo-ouro" aria-hidden="true"></li>
+        <li class="marco">
+          <span class="marco-ano">2026</span>
+          <h3>Ano de teste</h3>
+          <p>CBS e IBS passam a aparecer nas notas fiscais, em caráter de teste.</p>
+        </li>
+        <li class="marco">
+          <span class="marco-ano">2027</span>
+          <h3>CBS entra em vigor</h3>
+          <p>PIS e COFINS deixam de existir. Começa o Imposto Seletivo.</p>
+        </li>
+        <li class="marco">
+          <span class="marco-ano">2029–2032</span>
+          <h3>Transição</h3>
+          <p>ICMS e ISS diminuem ano a ano, enquanto o IBS cresce.</p>
+        </li>
+        <li class="marco">
+          <span class="marco-ano">2033</span>
+          <h3>Novo sistema completo</h3>
+          <p>ICMS e ISS são extintos. Vale só o novo modelo.</p>
+        </li>
+      </ol>
+      <div class="reforma-pe">
+        <p>Quem se prepara agora atravessa a transição sem surpresas.</p>
+        <a class="botao-contorno" href="https://wa.me/5579981600853?text=Ol%C3%A1%2C%20Carla!%20Quero%20preparar%20minha%20empresa%20para%20a%20reforma%20tribut%C3%A1ria.">Preparar minha empresa para a reforma <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Chamada -->
+  <section class="cena-chamada" data-fx-fundo="#5A0D45" data-fx-tinta="#F7F4F1">
+    <div class="moldura chamada-grade">
+      <div class="chamada-texto">
+      <div class="chamada-selo" aria-hidden="true" data-fx="crescer">CM</div>
+      <h2 data-fx="subir">Seu fiscal em ordem. Seu imposto no valor justo.</h2>
+      <p data-fx="surgir" data-fx-atraso="150">Converse com a Carla e entenda como a terceirização fiscal se encaixa na rotina da sua empresa.</p>
+      <a class="botao" data-fx="surgir" data-fx-atraso="300" href="https://wa.me/5579981600853?text=Ol%C3%A1%2C%20Carla!%20Vim%20pelo%20site%20e%20quero%20saber%20mais%20sobre%20a%20terceiriza%C3%A7%C3%A3o%20fiscal.">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+        Falar com a Carla no WhatsApp
+      </a>
+      </div>
+
+      <ul class="contatos" aria-label="Contatos">
+        <li class="rotulo" aria-hidden="true">Ou, se preferir</li>
+        <li data-fx="direita">
+          <a class="cartao" href="https://wa.me/5579981600853">
+            <span class="cartao-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></span>
+            <span class="cartao-texto"><span class="cartao-tipo">WhatsApp</span><span class="cartao-valor">(79) 98160-0853</span></span>
+            <span class="cartao-seta" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-fx="direita" data-fx-atraso="120">
+          <a class="cartao" href="mailto:assessoriaeconsultoriafiscal@gmail.com">
+            <span class="cartao-icone"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6l8.5 7 8.5-7"/></svg></span>
+            <span class="cartao-texto"><span class="cartao-tipo">E-mail</span><span class="cartao-valor">assessoriaeconsultoriafiscal<wbr>@gmail.com</span></span>
+            <span class="cartao-seta" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li data-fx="direita" data-fx-atraso="240">
+          <a class="cartao" href="https://www.instagram.com/carlamelocontadora/" rel="noopener">
+            <span class="cartao-icone"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg></span>
+            <span class="cartao-texto"><span class="cartao-tipo">Instagram</span><span class="cartao-valor">@carlamelocontadora</span></span>
+            <span class="cartao-seta" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape-final">
+  <div class="moldura rodape-grade">
+    <div class="rodape-marca">
+      <div class="rodape-nome">
+        <span class="chamada-selo" aria-hidden="true">CM</span>
+        <span><strong>CARLA MELO</strong><span>Assessoria e Consultoria Tributária</span></span>
+      </div>
+      <p>Contadora e consultora tributária. Terceirização fiscal, auditoria, consultoria, recuperação de impostos e benefícios fiscais.</p>
+    </div>
+    <nav aria-label="Navegação do rodapé">
+      <h3>Navegação</h3>
+      <ul>
+        <li><a href="#especialidade">Especialidade</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#pico">Como funciona</a></li>
+        <li><a href="#reforma">Reforma tributária</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h3>Contato</h3>
+      <ul>
+        <li><a href="https://wa.me/5579981600853">WhatsApp · (79) 98160-0853</a></li>
+        <li><a href="tel:+5579981600853">Ligar · (79) 98160-0853</a></li>
+        <li><a href="mailto:assessoriaeconsultoriafiscal@gmail.com">assessoriaeconsultoriafiscal<wbr>@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/carlamelocontadora/" rel="noopener">@carlamelocontadora</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="assinatura" aria-hidden="true">Carla Melo</p>
+  <div class="moldura rodape-base">
+    <span>© 2026 Carla Melo · Assessoria e Consultoria Tributária</span>
+    <a href="#topo">Voltar ao topo ↑</a>
+  </div>
+</footer>
+
+<script>
+/* Faixa de termos fiscais: desliza de lado conforme a rolagem (sem rolagem, parada). */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var trilha = document.querySelector(".faixa-trilha");
+  if (!trilha) return;
+  trilha.innerHTML += trilha.innerHTML; // duplica para dar a volta sem emenda
+  var agendado = false;
+  function quadro() {
+    agendado = false;
+    var metade = trilha.scrollWidth / 2;
+    var x = (window.scrollY * 0.6) % metade;
+    trilha.style.transform = "translateX(" + (-x).toFixed(1) + "px)";
+  }
+  window.addEventListener("scroll", function () {
+    if (!agendado) { agendado = true; requestAnimationFrame(quadro); }
+  }, { passive: true });
+})();
+
+/* Linha do tempo da reforma: a linha dourada avança com a rolagem e acende cada marco. */
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var secao = document.getElementById("reforma");
+  if (!secao) return;
+  var lista = secao.querySelector(".linha-tempo");
+  var ouro = secao.querySelector(".linha-tempo-ouro");
+  var marcos = secao.querySelectorAll(".marco");
+  var vertical = window.matchMedia("(max-width: 820px)");
+  var agendado = false;
+  function quadro() {
+    agendado = false;
+    var r = lista.getBoundingClientRect();
+    var h = window.innerHeight;
+    // começa quando a lista entra pela base da tela, completa quando chega a 35% do topo
+    var p = (h * 0.9 - r.top) / (h * 0.9 - h * 0.35 + (vertical.matches ? r.height : 0));
+    p = p < 0 ? 0 : p > 1 ? 1 : p;
+    ouro.style.transform = (vertical.matches ? "scaleY(" : "scaleX(") + p.toFixed(4) + ")";
+    marcos.forEach(function (m, i) {
+      m.classList.toggle("ativo", p >= (vertical.matches ? i / marcos.length : i / (marcos.length - 1)) - 0.001 && p > 0);
+    });
+  }
+  function agendar() { if (!agendado) { agendado = true; requestAnimationFrame(quadro); } }
+  window.addEventListener("scroll", agendar, { passive: true });
+  window.addEventListener("resize", agendar);
+  agendar();
+})();
+
+/* Movimento-assinatura: "A nota que se concilia".
+   Os documentos começam numa pilha bagunçada no centro da mesa e, conforme a
+   rolagem avança, cada um vai para o seu lugar na grade e recebe o selo.
+   No fim, o monograma CM carimba o conjunto. */
+(function () {
+  var secao = document.getElementById("pico");
+  if (!secao) return;
+  var mesa = secao.querySelector(".mesa");
+  var docs = Array.prototype.slice.call(mesa.querySelectorAll(".doc"));
+  var selos = docs.map(function (d) { return d.querySelector(".doc-selo"); });
+  var carimbo = mesa.querySelector(".carimbo");
+  var barra = secao.querySelector(".excesso-barra");
+  var fases = secao.querySelectorAll(".fase");
+  var reduzido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduzido) return; // CSS mostra o estado final
+
+  // bagunça determinística: deslocamento extra (fração da mesa) e giro de cada documento
+  var bagunca = [
+    { x: -0.06, y: 0.04, giro: -14 },
+    { x: 0.07, y: -0.06, giro: 9 },
+    { x: -0.02, y: 0.09, giro: 22 },
+    { x: 0.05, y: 0.02, giro: -7 },
+    { x: -0.08, y: -0.03, giro: 16 },
+    { x: 0.03, y: -0.08, giro: -21 }
+  ];
+  var ordemPilha = [3, 0, 5, 1, 4, 2]; // quem fica por cima na pilha
+  var deslocamentos = [];
+
+  function medir() {
+    var w = mesa.clientWidth, h = mesa.clientHeight;
+    docs.forEach(function (d, i) {
+      var cx = d.offsetLeft + d.offsetWidth / 2;
+      var cy = d.offsetTop + d.offsetHeight / 2;
+      deslocamentos[i] = {
+        x: w / 2 - cx + bagunca[i].x * w,
+        y: h / 2 - cy + bagunca[i].y * h
+      };
+    });
+  }
+
+  function limitar(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+  function suave(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+  var agendado = false;
+  function quadro() {
+    agendado = false;
+    var ret = secao.getBoundingClientRect();
+    var percurso = secao.offsetHeight - window.innerHeight;
+    if (percurso <= 0) return;
+    var p = limitar(-ret.top / percurso);
+
+    var assentados = 0;
+    docs.forEach(function (d, i) {
+      var inicio = 0.1 + i * 0.09;
+      var t = suave(limitar((p - inicio) / 0.17));
+      var resto = 1 - t;
+      var dx = deslocamentos[i].x * resto;
+      var dy = deslocamentos[i].y * resto - Math.sin(t * Math.PI) * 24; // leve arco ao "voar"
+      d.style.transform = "translate(" + dx.toFixed(1) + "px," + dy.toFixed(1) + "px) rotate(" + (bagunca[i].giro * resto).toFixed(2) + "deg)";
+      d.style.zIndex = t > 0 && t < 1 ? 20 : (t >= 1 ? 1 : 10 - ordemPilha.indexOf(i));
+
+      var s = limitar((t - 0.8) / 0.2);
+      selos[i].style.opacity = s.toFixed(3);
+      selos[i].style.transform = "scale(" + (1.8 - 0.8 * suave(s)).toFixed(3) + ")";
+      assentados += t;
+    });
+
+    // imposto a mais encolhe à medida que os documentos são conferidos
+    barra.style.transform = "scaleX(" + (1 - 0.82 * (assentados / docs.length)).toFixed(4) + ")";
+
+    // carimbo CM
+    var c = suave(limitar((p - 0.8) / 0.1));
+    carimbo.style.opacity = c.toFixed(3);
+    carimbo.style.transform = "scale(" + (1.5 - 0.5 * c).toFixed(3) + ") rotate(" + (-20 + 12 * c).toFixed(2) + "deg)";
+
+    var fase = p < 0.1 ? 0 : p < 0.78 ? 1 : 2;
+    fases.forEach(function (f, i) { f.classList.toggle("ativa", i === fase); });
+  }
+
+  function agendar() { if (!agendado) { agendado = true; requestAnimationFrame(quadro); } }
+  function remedir() {
+    docs.forEach(function (d) { d.style.transform = "none"; });
+    medir();
+    agendar();
+  }
+
+  remedir();
+  window.addEventListener("scroll", agendar, { passive: true });
+  window.addEventListener("resize", remedir);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(remedir);
+})();
+</script>
+</body>
+</html>
